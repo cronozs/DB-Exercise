@@ -3,7 +3,7 @@ import psycopg2
 PSQL_HOST = 'localhost'
 PSQL_PORT = '5432'
 PSQL_USER = 'postgres'
-PSQL_PASS = ''
+PSQL_PASS = 'Nirtolatao598$'
 PSQL_DB = 'postgres'
 
 connection_address = """
@@ -90,6 +90,14 @@ def Searching(info, more_less):
 
     return [maxi, minu, year_max, year_min]
 
+def Average(info, j = int):
+    result = 0
+    for count in info:
+        add = count[j]
+        result += int(add)
+    return (result / len(info))
+
+
 
 if __name__ == '__main__':
     pib_per_cap = Pib_per_capita(population_values, income_values)
@@ -101,6 +109,7 @@ if __name__ == '__main__':
     total_changes = Population_increment(population_values, 2)
     more_less_total = Big_less(total_changes)
     more_men = Man_and_woman_comparison(population_values)
+    average_man = Average(population_values, 3)
 
     search_pib = Searching(pib_per_cap, more_less)
     search_man = Searching(men_changes, more_less_man)
@@ -110,4 +119,8 @@ if __name__ == '__main__':
     print('en México el maximo aumento de hombres en la poblacion fue de', int(search_man[0]),'en el año de', int(search_man[2]), 'y el menor aumento fue de', int(search_man[1]), 'en el año de ', int(search_man[3]))
     print('en México el maximo aumento de mujeres en la poblacion fue de', int(search_woman[0]),'en el año de', int(search_woman[2]), 'y el menor aumento fue de', int(search_woman[1]), 'en el año de ', int(search_woman[3]))
     print('en México el maximo aumento total en la poblacion fue de', int(search_total[0]),'en el año de', int(search_total[2]), 'y el menor aumento fue de', int(search_total[1]), 'en el año de ', int(search_total[3]))
+    print('el promedio de cresimiento poblacional en México desde 1960 hasta 2019 es', int(average_man))
     print('otro dato que podemos sacar es que en México segun estos datos desde el año de 1960 residen mas mjeres que hombres en el pais')
+
+    
+
