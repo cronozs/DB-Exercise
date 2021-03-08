@@ -110,16 +110,20 @@ if __name__ == '__main__':
     more_less_total = Big_less(total_changes)
     more_men = Man_and_woman_comparison(population_values)
     average_man = Average(population_values, 3)
-
+    average_woman = Average(population_values, 4)
+    average_total = Average(population_values, 2)
     search_pib = Searching(pib_per_cap, more_less)
     search_man = Searching(men_changes, more_less_man)
     search_woman = Searching(women_changes, more_less_woman)
     search_total = Searching(total_changes, more_less_total)
+
     print('en México el maximo pib per capita que ha habido ha sido en el año de', int(search_pib[2]),'con un ingreso de', int(search_pib[0]), 'por persona y el menor fue en el año de', int(search_pib[3]), 'con un total de', int(search_pib[1]), 'por persona')
     print('en México el maximo aumento de hombres en la poblacion fue de', int(search_man[0]),'en el año de', int(search_man[2]), 'y el menor aumento fue de', int(search_man[1]), 'en el año de ', int(search_man[3]))
     print('en México el maximo aumento de mujeres en la poblacion fue de', int(search_woman[0]),'en el año de', int(search_woman[2]), 'y el menor aumento fue de', int(search_woman[1]), 'en el año de ', int(search_woman[3]))
     print('en México el maximo aumento total en la poblacion fue de', int(search_total[0]),'en el año de', int(search_total[2]), 'y el menor aumento fue de', int(search_total[1]), 'en el año de ', int(search_total[3]))
-    print('el promedio de cresimiento poblacional en México desde 1960 hasta 2019 es', int(average_man))
+    print('el promedio de cresimiento poblacional de hombres en México desde 1960 hasta 2019 es', int(average_man))
+    print('el promedio de cresimiento poblacional de mujeres en México desde 1960 hasta 2019 es', int(average_woman))
+    print('el promedio de cresimiento poblacional total en México desde 1960 hasta 2019 es', int(average_total))
     print('otro dato que podemos sacar es que en México segun estos datos desde el año de 1960 residen mas mjeres que hombres en el pais')
 
     
